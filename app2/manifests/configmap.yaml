@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: redis-app2-config
+  namespace: default
+data:
+  app.name: "redis-app2"
+  app.version: "2.0.0"
+  environment: "production"
+  redis.maxmemory: "256mb"

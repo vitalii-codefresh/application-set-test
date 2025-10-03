@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: multi-app-set
+  namespace: argocd
+spec:
+  generators:
+  - git:
+      repoURL: https://github.com/vitalii-codefresh/application-set-test
+      revision: HEAD
+      directories:
+      - path: app*
+  template:
+    metadata:
+      name: '{{path.basename}}'
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/your-username/application-set-test
+        targetRevision: HEAD
+        path: '{{path}}/manifests'
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: default
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+        - CreateNamespace=true
