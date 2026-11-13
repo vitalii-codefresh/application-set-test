@@ -1,0 +1,15 @@
+app1/manifests/deployment.yaml
+  h_51acfbafc7319b 9
+  h_51acfbafc7319b 29
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "fe735fcef272a562bf86b5f205332f674fdb0d17",
+  "prompts": {},
+  "humans": {
+    "h_51acfbafc7319b": {
+      "author": "vitaliichyrka <vitalii.chyrka@codefresh.io>"
+    }
+  }
+}
